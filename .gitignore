@@ -1,0 +1,15 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.local
+venv/
+.venv/
+backend/model/adaboost.pkl
+backend/model/encoder.pkl
+*.log
+.DS_Store
+Thumbs.db
+ai4i2020.csv

@@ -1,0 +1,226 @@
+.result-page {
+  padding: 40px 0;
+  max-width: 720px;
+  margin: 0 auto;
+  animation: fadeSlideIn 0.5s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Result hero ── */
+.result-hero {
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  margin-bottom: 28px;
+}
+.result-hero.normal {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, rgba(17, 24, 39, 0.7) 60%);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+.result-hero.failure {
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.08) 0%, rgba(17, 24, 39, 0.7) 60%);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.result-status-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.normal .result-status-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+}
+.failure .result-status-icon {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.badge-normal {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.badge-failure {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.result-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+/* ── Result cards ── */
+.result-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.card-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.val-green {
+  color: var(--green);
+}
+.val-red {
+  color: var(--red);
+}
+
+.result-card.recommendation .card-value {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* ── Parameters section ── */
+.params-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 28px;
+}
+
+.params-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--accent-cyan);
+}
+
+.params-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.param-card {
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.param-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.param-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.param-unit {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* ── Actions ── */
+.result-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.25s;
+}
+
+.action-btn.primary {
+  background: var(--gradient-blue);
+  color: white;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+}
+.action-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(14, 165, 233, 0.45);
+}
+
+.action-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.action-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .params-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-actions { flex-direction: column; }
+}
